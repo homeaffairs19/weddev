@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentGradeApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="GradeController as ctrl">
+
+    <h1>Student Grade Management System</h1>
+
+    <form ng-submit="ctrl.submitGrades()">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" ng-model="ctrl.grades.name" required>
+
+        <label for="math">Math:</label>
+        <input type="number" id="math" ng-model="ctrl.grades.math" required>
+
+        <label for="science">Science:</label>
+        <input type="number" id="science" ng-model="ctrl.grades.science" required>
+
+        <label for="english">English:</label>
+        <input type="number" id="english" ng-model="ctrl.grades.english" required>
+
+        <label for="history">History:</label>
+        <input type="number" id="history" ng-model="ctrl.grades.history" required>
+
+        <label for="geography">Geography:</label>
+        <input type="number" id="geography" ng-model="ctrl.grades.geography" required>
+
+        <button type="submit">Submit Grades</button>
+    </form>
+
+    <h2>Total Percentage: {{ ctrl.totalPercentage }}%</h2>
+
+    <h3>Class Topper:</h3>
+    <p ng-if="ctrl.topper">{{ ctrl.topper.name }} - {{ ctrl.topper.percentage }}%</p>
+
+    <h3>All Students:</h3>
+    <ul>
+        <li ng-repeat="student in ctrl.students">
+            {{ student.name }} - Math: {{ student.math }}, Science: {{ student.science }},
+            English: {{ student.english }}, History: {{ student.history }},
+            Geography: {{ student.geography }}, Percentage: {{ student.percentage }}%
+        </li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

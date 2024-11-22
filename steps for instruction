@@ -1,0 +1,21 @@
+npm install express mysql2 body-parser cors
+
+node server.js
+
+
+open xampp go to my admin
+
+run the following thing  for setting up the DB
+
+CREATE TABLE grades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    math INT,
+    science INT,
+    english INT,
+    history INT,
+    geography INT,
+    percentage FLOAT
+);
+
+
